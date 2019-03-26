@@ -31,8 +31,28 @@
      //2.
 //    [self getFactAndCountTrailingZeros];
 
+//    3.
+    [self isNumberPrime];
      //4.
 //    [self searchPatternInStr];
+}
+
+-(void)isNumberPrime{
+    int n = 211;
+    int isPrime = 0;
+    for (int i = 1; i <= n; i++) {
+        if(n%i != 0)
+            isPrime = 1;
+        else{
+            if(n == i || i == 1)
+                isPrime = 1;
+            else{
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+    NSLog(@"n is prime: %d", isPrime);
 }
 
 -(void)searchPatternInStr{
