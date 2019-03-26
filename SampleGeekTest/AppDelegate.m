@@ -31,6 +31,41 @@
      //2.
 //    [self getFactAndCountTrailingZeros];
 
+     //4.
+//    [self searchPatternInStr];
+}
+
+-(void)searchPatternInStr{
+    NSString *str1 = @"ABAADADADFE";
+    NSString *str2 = @"AB";
+    
+    const char *cStr1 = [str1 UTF8String];
+    const char *cStr2 = [str2 UTF8String];
+    int match = 0;
+    for (int i = 0; i < strlen(cStr1); i++) {
+        int mnPtr = i;
+        //        NSLog(@"%c", cStr1[i]);
+        for (int j = 0; j < strlen(cStr2); j++) {
+            //            NSLog(@"%c", cStr2[j]);
+            if(cStr1[mnPtr] == cStr2[j]){
+                //                NSLog(@"char match");
+                mnPtr += 1;
+                match = 1;
+                continue;
+            }
+            else{
+                //                NSLog(@"char not match");
+                match = 0;
+                break;
+            }
+        }
+        if(match == 1){
+            NSLog(@"str present in pattern");
+            break;
+        }
+    }
+    if(match == 0)
+        NSLog(@"str not present in pattern");
 }
 
 -(void)getFactAndCountTrailingZeros{
@@ -95,7 +130,7 @@
         sPrev = prev;
         prev = sum;
         
-        NSLog(@"%d", sum);
+        NSLog(@"fibnaccy sequence: %d", sum);
     }
 }
 
