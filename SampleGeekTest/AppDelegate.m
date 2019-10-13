@@ -2,8 +2,6 @@
 //  AppDelegate.m
 //  SampleGeekTest
 //
-//  Created by AMRA on 26/03/19.
-//  Copyright © 2019 innovanathinklabs. All rights reserved.
 //
 
 #import "AppDelegate.h"
